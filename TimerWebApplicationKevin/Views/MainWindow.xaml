@@ -1,0 +1,25 @@
+﻿<Window x:Class="TimerWebApplicationKevin.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimerWebApplicationKevin.Views"
+        xmlns:views="clr-namespace:TimerWebApplicationKevin.Views"
+        xmlns:viewmodel="clr-namespace:TimerWebApplicationKevin.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1200">
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodel:LoginViewModel}">
+                <views:LoginView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:TimerViewModel}">
+                <views:TimerView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:ShowResultsViewModel}">
+                <views:ShowResults/>
+            </DataTemplate>
+            
+        </ContentControl.Resources>
+    </ContentControl>
+</Window>
